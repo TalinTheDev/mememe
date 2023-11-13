@@ -1,0 +1,121 @@
+:root {
+    --light-background: #f8f8f8;
+    --light-main-text: #333;
+    --light-accent: #FF6347;
+    --light-secondary-text: #666;
+    --light-link: #FF6347;
+    --light-hover: #3498db;
+    --light-border: #333;
+
+    --dark-background: #1E1E1E;
+    --dark-main-text: #F8F8F8;
+    --dark-accent: #FF6347;
+    --dark-secondary-text: #CCCCCC;
+    --dark-link: #FF6347;
+    --dark-hover: #3498db;
+    --dark-border: #333;
+}
+
+h1,
+p {
+    color: var(--dark-main-text);
+}
+
+h2 {
+    color: var(--dark-secondary-text);
+}
+
+body {
+    background-color: var(--dark-background);
+    color: var(--dark-main-text);
+    font-family: "Courier Prime", monospace;
+}
+
+a {
+    color: var(--dark-link);
+    transition: 0.4s;
+}
+
+a:hover {
+    color: var(--dark-hover);
+    cursor: pointer;
+}
+
+#page {
+    width: 55vw;
+    margin: auto;
+    padding: 15px;
+    margin-top: 15px;
+    /* border: 1px solid var(--dark-border); */
+}
+
+#nav {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    place-content: center;
+    border-bottom: 1px solid var(--dark-border);
+    padding-bottom: 15px;
+}
+
+#homeLink {
+    grid-column: 0 1;
+    font-size: 28px;
+}
+
+#logoTerminal {
+    font-weight: bold;
+}
+
+#logoCursor {
+    transition: 0.3s;
+}
+
+#logoCursor.on {
+    background-color: var(--dark-link);
+}
+
+a:hover #logoCursor.on {
+    background-color: var(--dark-hover);
+}
+
+#otherLinks {
+    grid-column: 1 2;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 18px;
+}
+
+#projectsLink,
+#blogLink,
+#aboutLink {
+    margin: 0px 15px;
+    color: var(--dark-hover);
+    text-decoration: underline;
+    text-underline-offset: 15%;
+}
+
+#projectsLink:hover,
+#blogLink:hover,
+#aboutLink:hover {
+    color: var(--dark-accent)
+}
+
+#content {
+    margin-top: 25px;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 5px 0px;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 0px;
+}
+
+p {
+    margin: 25px 0px;
+}
