@@ -1,9 +1,5 @@
 ---
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
+import Navbar from "../components/Navbar.astro";
 ---
 
 <!doctype html>
@@ -13,39 +9,78 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<div id="page">
+			<Navbar/>
+			<div id="content">
+				<slot />
+			</div>
+		</div>
 	</body>
+
+	<style lang="scss" is:global>
+		:root {
+			--light-background: #f8f8f8;
+			--light-main-text: #333;
+			--light-accent: #ff6347;
+			--light-secondary-text: #666;
+			--light-link: #ff6347;
+			--light-hover: #3498db;
+			--light-border: #333;
+
+			--dark-background: #1e1e1e;
+			--dark-main-text: #f8f8f8;
+			--dark-accent: #ff6347;
+			--dark-secondary-text: #cccccc;
+			--dark-link: #ff6347;
+			--dark-hover: #3498db;
+			--dark-border: #333;
+		}
+
+		body {
+			background-color: var(--dark-background);
+			color: var(--dark-main-text);
+			font-family: "Courier Prime", monospace;
+		}
+
+		a {
+			color: var(--dark-link);
+			transition: 0.4s;
+		}
+
+		a:hover {
+			color: var(--dark-hover);
+			cursor: pointer;
+		}
+
+		#page {
+			width: 75vw;
+			margin: auto;
+			padding: 15px;
+			margin-top: 15px;
+		}
+
+		
+		#content {
+			margin-top: 25px;
+			padding: 10px;
+		}
+		h1 {
+			font-size: 32px;
+			margin: 5px 0px;
+			color: var(--dark-main-text);
+		}
+
+		h2 {
+			font-size: 18px;
+			margin: 0px;
+			color: var(--dark-secondary-text);
+		}
+
+		p {
+			margin: 25px 0px;
+			color: var(--dark-main-text);
+		}
+	</style>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>

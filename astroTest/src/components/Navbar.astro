@@ -1,0 +1,75 @@
+<div id="nav">
+	<a id="homeLink">
+		<span id="logoTerminal">&gt;&nbsp;<span id="logoName"><span id="logoCursor" class="on">&nbsp</span></span>
+	</a>
+	<div id="otherLinks">
+		<a id="projectsLink">Projects</a>
+		<a id="blogLink" href="./blog.html">Blog</a>
+		<a id="aboutLink">About Me</a>
+	</div>
+</div>
+
+<script>
+	let typewriterStep = 0;
+	let name = "Talin Sharma";
+	let speed = 100;
+
+	function typeWriter() {
+		let cursor = document.getElementById("logoCursor");
+		if (typewriterStep < name.length) {
+			cursor.parentNode.insertBefore(document.createTextNode(name.charAt(typewriterStep)), cursor);
+			typewriterStep++;
+			setTimeout(typeWriter, speed);
+		} else {
+			document.getElementById("logoName").innerHTML += "&thinsp;";
+			setInterval(() => {
+				let cursor = document.getElementById("logoCursor");
+				cursor.classList.contains("on") ? cursor.classList.remove("on") : cursor.classList.add("on");
+			}, 750);
+		}
+	}
+	typeWriter();
+</script>
+
+<style lang="scss">
+	#nav {
+		display: grid;
+		grid-template-columns: 35% 65%;
+		place-content: center;
+		border-bottom: 1px solid var(--dark-border);
+		padding-bottom: 15px;
+	}
+
+	#homeLink {
+		grid-column: 1;
+		font-size: 28px;
+	}
+
+	#logoTerminal {
+		font-weight: bold;
+	}
+
+	#otherLinks {
+		grid-column: 2;
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		font-size: 18px;
+
+		a {
+			margin: 0px 15px;
+			color: var(--dark-hover);
+			text-decoration: underline;
+			text-underline-offset: 15%;
+		}
+		a:hover {
+			color: var(--dark-accent);
+		}
+	}
+	#logoCursor {
+		transition: 0.3s;
+	}
+	#logoCursor.on{
+		background-color: var(--dark-link);
+	}
+</style>
