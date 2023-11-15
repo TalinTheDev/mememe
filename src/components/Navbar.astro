@@ -45,7 +45,7 @@
 			display: grid;
 			grid-template-columns: 35% 65%;
 			place-content: center;
-			border-bottom: 1px solid var(--dark-border);
+			border-bottom: 1px solid var(--grey-dark);
 			padding-bottom: 15px;
 		}
 
@@ -53,17 +53,17 @@
 			grid-column: 1;
 			font-size: 28px;
 			text-decoration: none;
-			color: var(--dark-link);
+			color: var(--primary);
 			max-width: max-content;
 			transition: 0.4s;
 
 			&:hover {
 				cursor: pointer;
-				color: var(--dark-hover);
+				color: var(--accent);
 			}
 
 			&:hover #logoCursor:where(.on) {
-				background-color: var(--dark-hover);
+				background-color: var(--accent);
 			}
 
 			#logoTerminal {
@@ -74,7 +74,7 @@
 				transition: 0.3s;
 
 				&:where(.on) {
-					background-color: var(--dark-link);
+					background-color: var(--primary);
 				}
 			}
 		}
@@ -88,13 +88,13 @@
 
 			& a {
 				margin: 0px 15px;
-				color: var(--dark-hover);
+				color: var(--primary);
 				text-decoration: underline;
 				text-underline-offset: 15%;
 				transition: 0.4s;
 			}
 			& a:hover {
-				color: var(--dark-accent);
+				color: var(--accent);
 				cursor: pointer;
 			}
 		}
