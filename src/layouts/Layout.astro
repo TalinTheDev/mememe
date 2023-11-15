@@ -38,20 +38,16 @@ import Navbar from "../components/Navbar.astro";
 			--dark-border: #333;
 		}
 
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+
 		body {
 			background-color: var(--dark-background);
 			color: var(--dark-main-text);
 			font-family: "Courier Prime", monospace;
-		}
-
-		a {
-			color: var(--dark-link);
-			transition: 0.4s;
-		}
-
-		a:hover {
-			color: var(--dark-hover);
-			cursor: pointer;
 		}
 
 		#page {
